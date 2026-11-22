@@ -579,8 +579,9 @@ def page_forecast():
              ("One-step MAE", f"{one.iloc[0].MAE:.2f} L/h", "real previous hour known"),
              (f"Next {horizon} h total", f"{nxt:,.0f} L" if not np.isnan(nxt) else "—", f"from {ev.meta['last_observed']:%d %b %H:%M}")])
     if rf is not None and rf.MAE >= best_base:
-        note(f"On this series a simple baseline ({esc(best_name)}) is as accurate as the Random Forest. That usually means "
-             "consumption follows a fixed daily pattern with random noise, and there is little more to learn.", "warn")
+        note(f"On this series a simple baseline ({esc(best_name)}) matches or beats the Random Forest. That happens when "
+             "consumption follows a fixed daily pattern with random noise, when there is little history to learn from, or "
+             "when unusual events (such as a potential leak) fall in the test period. Use the simpler forecast here.", "warn")
     hist = ev.history[ev.history.index > ev.history.index.max() - pd.Timedelta(days=7)]
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=hist.index, y=hist.values, name="Observed (last 7 days)", line=dict(color=AQUA, width=1.6)))

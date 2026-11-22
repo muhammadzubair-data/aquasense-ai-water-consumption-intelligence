@@ -15,7 +15,10 @@
   <img alt="Data" src="https://img.shields.io/badge/data-synthetic-F59E0B">
 </p>
 
-<p align="center"><i>Live demo: the link and badge are added here after the deployed app has been verified in a browser.</i></p>
+<p align="center">
+  <a href="https://aquasense-ai-zubairlabs.streamlit.app"><img alt="Open in Streamlit" src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
+  &nbsp;<a href="https://aquasense-ai-zubairlabs.streamlit.app"><b>aquasense-ai-zubairlabs.streamlit.app</b></a>
+</p>
 
 > [!IMPORTANT]
 > AquaSense AI runs on **synthetic** data by default. Anomalies are *unusual readings* and leak episodes are
@@ -223,8 +226,7 @@ Ambiguous dates such as `01/02/2026` are read month-first.
 
 ## 10. Application screenshots
 
-All images below are **real screenshots** of the running app (local run; live-site screenshots are added in section
-16 after deployment). The illustrations in sections 4 and 7 are hand-made diagrams.
+All images below are **real screenshots** of the running app (local run; live-site screenshots are in section 16). The illustrations in sections 4 and 7 are hand-made diagrams.
 
 | | |
 |:--:|:--:|
@@ -365,6 +367,29 @@ streamlit run app.py & python tests/e2e_ui.py http://localhost:8501
 2. Repository `muhammadzubair-data/aquasense-ai-water-consumption-intelligence`, branch `main`, main file `app.py`.
 3. **Advanced settings → Python 3.12.** No secrets are needed.
 4. Deploy. The first visit generates the demo and trains models in a few seconds; results are cached for an hour.
+
+**Live deployment (verified 22 Nov 2026):** [aquasense-ai-zubairlabs.streamlit.app](https://aquasense-ai-zubairlabs.streamlit.app)
+- **Settings:** repository `muhammadzubair-data/aquasense-ai-water-consumption-intelligence`, branch `main`, entry point `app.py`, Python 3.12, no secrets.
+- **Live results match section 11 exactly:**
+  - the Command Center shows 627.9 m³, 8.1 L/h night flow and 2 higher-priority indicators
+  - the leak page shows 8 episodes, 2 of 2 leaks found, 0 non-matching higher-priority episodes, a 3.5 h delay, and 50% / 91% vs the v1 rule's 27% / 81%
+  - the anomaly check shows 49 of 49 bursts, 28 of 80 leak hours and 77 of 168 flags
+  - the network-total forecast shows 15.50 vs 27.73 L/h (one step 11.31)
+- **Interactions checked live:**
+  - the leak ratio slider at 1.80 cuts the list to 2 episodes
+  - switching to the original anomaly method rescores all 17,280 readings
+  - the meter filter (METER-002 = 93.8 m³) works
+  - dark theme works
+- **Upload checked live:** the messy sample is cleaned to 1,500 hourly readings with every repair counted and local time kept.
+  - Leak episodes on the upload match the CLI (WM-001 higher priority, 39 h, 900 L).
+  - The forecast page correctly says the baseline wins on that short file.
+  - The upload persisted across pages via the sidebar, "Remove upload" restored the demo, and a file without the required columns showed a clear error.
+- **Downloads:** exercised by the CI browser test rather than clicked on the live site.
+
+| | | |
+|:--:|:--:|:--:|
+| <img src="assets/screenshots/live-forecast-network-total.png" alt="Live: network forecast"> | <img src="assets/screenshots/live-upload-leak-episode-dark.png" alt="Live: leak episode on uploaded file, dark"> | <img src="assets/screenshots/live-meter-intelligence-dark.png" alt="Live: meter intelligence, dark"> |
+| Live · network-total forecast | Live · leak episode on the messy upload | Live · meter intelligence, dark |
 
 Notes:
 - Forecasts are evaluated only for the series you open (about 1–2 s each).

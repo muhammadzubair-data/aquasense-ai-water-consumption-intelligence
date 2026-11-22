@@ -1,6 +1,6 @@
 # AquaSense AI: portfolio and announcement material
 
-Live app: LIVE_URL
+Live app: https://aquasense-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/aquasense-ai-water-consumption-intelligence
 
 All figures come from synthetic demonstration data. They show the method, not real-world detection or forecasting accuracy.
@@ -66,7 +66,7 @@ What the synthetic tests showed:
 
 All results are from synthetic data. These are signals for a site check, not confirmed leaks.
 
-Live demo: LIVE_URL
+Live demo: https://aquasense-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/aquasense-ai-water-consumption-intelligence
 
 #WaterAnalytics #SmartUtilities #DataScience #MachineLearning #AnomalyDetection #Forecasting #Streamlit
@@ -99,7 +99,7 @@ Honest limits: synthetic data, no confirmed leak labels or pressure data; indica
 
 Tools: Python, pandas, scikit-learn, Plotly, Streamlit, pytest, Playwright, GitHub Actions
 
-Live demo: LIVE_URL
+Live demo: https://aquasense-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/aquasense-ai-water-consumption-intelligence
 
 ---
@@ -142,4 +142,4 @@ known synthetic leaks: higher-priority indicators found both, with no false alar
 Plotly and Streamlit, with automated tests and CI. Demonstrated on synthetic data, with indicators presented as
 signals to check, not confirmed leaks.
 
-[Live demo](LIVE_URL) · [Source code](https://github.com/muhammadzubair-data/aquasense-ai-water-consumption-intelligence)
+[Live demo](https://aquasense-ai-zubairlabs.streamlit.app) · [Source code](https://github.com/muhammadzubair-data/aquasense-ai-water-consumption-intelligence)
