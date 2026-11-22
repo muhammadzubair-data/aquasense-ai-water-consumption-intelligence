@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="From unusual readings to potential leak indicators">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#04101F"/><stop offset="1" stop-color="#0B2D4A"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#94A3B8"/></marker>
+  </defs>
+  <rect width="1200" height="430" rx="22" fill="url(#bg)"/>
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="40" y="50" font-size="13" font-weight="700" letter-spacing="3" fill="#2DD4BF">SIGNALS, NOT DIAGNOSES</text>
+    <text x="40" y="78" font-size="22" font-weight="800" fill="#F8FAFC">Unusual reading → sustained excess → night flow → site check</text>
+
+    <rect x="40" y="110" width="250" height="150" rx="14" fill="#0EA5E9" fill-opacity=".12" stroke="#0EA5E9"/>
+    <text x="58" y="140" font-size="16" font-weight="700" fill="#BAE6FD">1 · Typical for the hour</text>
+    <g font-size="12.5" fill="#CBD5E1">
+      <text x="58" y="166">median of the same hour on</text>
+      <text x="58" y="186">earlier days of the same type</text>
+      <text x="58" y="206">(10 weekdays / 4 weekend days)</text>
+      <text x="58" y="234" fill="#94A3B8">past data only — tested</text>
+    </g>
+
+    <rect x="320" y="110" width="250" height="150" rx="14" fill="#14B8A6" fill-opacity=".12" stroke="#14B8A6"/>
+    <text x="338" y="140" font-size="16" font-weight="700" fill="#99F6E4">2a · Unusual readings</text>
+    <g font-size="12.5" fill="#CBD5E1">
+      <text x="338" y="166">Isolation Forest on reading,</text>
+      <text x="338" y="186">gap from typical, 3-h gap</text>
+      <text x="338" y="206">flags a fixed share (e.g. 1%)</text>
+      <text x="338" y="234" fill="#FDE68A">catches bursts and spikes</text>
+    </g>
+
+    <rect x="600" y="110" width="250" height="150" rx="14" fill="#10B981" fill-opacity=".12" stroke="#10B981"/>
+    <text x="618" y="140" font-size="16" font-weight="700" fill="#A7F3D0">2b · Sustained excess</text>
+    <g font-size="12.5" fill="#CBD5E1">
+      <text x="618" y="166">12-h mean ≥ 1.35 × typical</text>
+      <text x="618" y="186">and ≥ 8 L/h above it</text>
+      <text x="618" y="206">runs ≥ 6 h become episodes</text>
+      <text x="618" y="234" fill="#94A3B8">all thresholds adjustable</text>
+    </g>
+
+    <rect x="880" y="110" width="280" height="150" rx="14" fill="#F43F5E" fill-opacity=".12" stroke="#F43F5E"/>
+    <text x="898" y="140" font-size="16" font-weight="700" fill="#FECDD3">3 · Night-flow priority</text>
+    <g font-size="12.5" fill="#CBD5E1">
+      <text x="898" y="166">Higher: ≥ 12 h and raised flow</text>
+      <text x="898" y="186">in ≥ 2 hours between 02:00–05:00</text>
+      <text x="898" y="206">Lower: daytime / evening only</text>
+      <text x="898" y="234" fill="#FDA4AF">still only a potential indicator</text>
+    </g>
+
+    <g stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M290 160 H 316"/><path d="M165 260 C 165 292, 725 292, 725 264"/><path d="M850 185 H 876"/>
+    </g>
+
+    <rect x="40" y="300" width="1120" height="100" rx="16" fill="#0B2340" stroke="#94A3B8" stroke-opacity=".35"/>
+    <text x="62" y="330" font-size="14" font-weight="700" letter-spacing="1" fill="#E2E8F0">SYNTHETIC CHECK (realistic profile, seed 42 · 2 injected leaks, 49 burst hours)</text>
+    <g font-size="13" fill="#CBD5E1">
+      <text x="62" y="356">Unusual readings at 1%: all 49 burst hours flagged, but only 28 of 80 leak hours — unusual is not the same as a leak.</text>
+      <text x="62" y="380">Episodes: 2 of 2 leaks found; 6 lower-priority episodes match no leak; higher priority: 2 of 2 found, 0 non-matching.</text>
+    </g>
+  </g>
+</svg>

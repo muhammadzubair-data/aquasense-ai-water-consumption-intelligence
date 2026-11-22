@@ -1,6 +1,32 @@
+# Python
 __pycache__/
+*.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Environments and secrets
 .venv/
+venv/
+env/
 .env
+.env.*
 .streamlit/secrets.toml
-*.pyc
+
+# Local data and generated reports (never commit real meter or customer data)
+reports/
+uploads/
+private_*.csv
+*.xlsx
+
+# Editors, OS, test artefacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+test-results/
+playwright-report/
+streamlit.log
